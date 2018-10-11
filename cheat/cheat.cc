@@ -9,9 +9,9 @@
 //##############################
 
 
-//Pro1 GIT repository:
+//Pro1 GIT repositories:
+//https://github.com/GordilloXavi/pro1
 // https://github.com/dumitrux/PRO1-jutge-FIB
-
 /*
 
 
@@ -73,8 +73,7 @@ std::string toStr(const char *argv[], int size){//Will return an url "[Tema]/[pr
 
 std::string toUrl(const char *argv[], int size){//Will return an url "[Tema]/[program_name].cc"
 
-	std::string w = "https://raw.githubusercontent.com/dumitrux/PRO1-jutge-FIB/master/";
-
+	std::string w = "https://github.com/GordilloXavi/pro1";
 	for(int i = 1; i< size; ++i){
 
 		w+= argv[i];
@@ -83,7 +82,7 @@ std::string toUrl(const char *argv[], int size){//Will return an url "[Tema]/[pr
 	}
 
 	    
-    std::string url1 = "curl ";
+    	std::string url1 = "curl ";
 	std::string url2 = ".cc >> .program.cc";
 
 	std::string res = url1 + w + url2;
@@ -100,22 +99,11 @@ int main(int argc, char const *argv[]){//Argument has to be "P2-FirstLoops/P2734
 
 	if(argc > 1){//Will only run if at least 1 parameter is passed
 
-		program_code = toStr(argv, argc);
+	program_code = toStr(argv, argc);
 
-		program_code = make_command(program_code);
+	program_code = make_command(program_code);
 
-		//std::string s = "cowsay\n";
-
-
-		
-        
-//################################################################    
-        
-        
-        
-        //system(curl [url] >> program_code.cc);
-
-        std::string url = toUrl(argv, argc);
+	std::string url = toUrl(argv, argc);
         
         char x[url.size()];
         
@@ -126,42 +114,40 @@ int main(int argc, char const *argv[]){//Argument has to be "P2-FirstLoops/P2734
         
         system(x);//Executes the instruction "curl foo.cc >> .program.x"
         
-//################################################################
         
         char tab2[program_code.size()];
-		std::strcpy(tab2, program_code.c_str());
 
-		system(tab2);//Compile program
+	std::strcpy(tab2, program_code.c_str());
 
-		std::ifstream inputFile;
+	system(tab2);//Compile program
+
+	std::ifstream inputFile;
 
 
-		inputFile.open(".program.out", std::fstream::in);
+	inputFile.open(".program.out", std::fstream::in);
 
-		if(inputFile.is_open()){
+	if(inputFile.is_open()){
 
-			while(inputFile.good()){//good() is true if we havent reached the end of the file.
+		while(inputFile.good()){//good() is true if we havent reached the end of the file.
 
-				std::string readText = "";
+			std::string readText = "";
 
-				getline(inputFile, readText);
+			getline(inputFile, readText);
 
-				std::cout << readText;
-
-			}
-
+			std::cout << readText;
+		
 		}
 
-		inputFile.close();
-
-		//remove file
-
-
-		remove(".program.x");
-
-	}else{
-		std::cout << "Pass the names of the file as a parameter.\n";
 	}
+
+	inputFile.close();
+
+	//remove executable file
+
+	remove(".program.x");
+
+	} else	std::cout << "Pass the names of the file as a parameter.\n";
+	
 
 
 
@@ -171,11 +157,6 @@ int main(int argc, char const *argv[]){//Argument has to be "P2-FirstLoops/P2734
 	//.program.out contains the outputs of .program.x, which you will have yo type manually
 
 	
-
-
-
-
-
 	return 0;
 }
 
