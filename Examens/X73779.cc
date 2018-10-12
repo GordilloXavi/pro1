@@ -19,7 +19,7 @@ int main() {
 		total ++;
 
 		if(a == b)ties++;
-		else if(a == 'P' and b == 'R' or a == 'R' and b == 'T' or a == 'T' and b == 'P')p1++;
+		else if((a == 'P' and b == 'R') or (a == 'R' and b == 'T') or (a == 'T' and b == 'P'))p1++;
 		else p2++;
 
 	}
