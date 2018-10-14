@@ -73,7 +73,7 @@ std::string toStr(const char *argv[], int size){//Will return an url "[Tema]/[pr
 
 std::string toUrl(const char *argv[], int size){//Will return an url "[Tema]/[program_name].cc"
 
-	std::string w = "https://github.com/GordilloXavi/pro1";
+	std::string w = "https://github.com/dumitrux/PRO1-jutge-FIB/tree/master/";
 	for(int i = 1; i< size; ++i){
 
 		w+= argv[i];
@@ -145,6 +145,10 @@ int main(int argc, char const *argv[]){//Argument has to be "P2-FirstLoops/P2734
 	//remove executable file
 
 	remove(".program.x");
+
+	remove(".program.cc");
+
+	remove(",program.out");
 
 	} else	std::cout << "Pass the names of the file as a parameter.\n";
 	
