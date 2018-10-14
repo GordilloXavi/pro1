@@ -4,26 +4,36 @@ using namespace std;
 
 int main(){
 
-	std::string s,s2;
+	string s1, charset;
 
-	std::cin >> s >> s2;
+	cin >> s1 >> charset;
 
-	int l = s.size();
-	int l2 = s2.size();
 
-	for(int i = 0; i<l; ++i){
+	for(int i = 0; i<s1.size(); ++i){
 
-		for(int j = 0; j<l2;++j){
+		for(int j = 0; j<charset.size(); ++j){
 
-			if(s[i] == s2[j])s[i] = '.';
+			if(s1[i] == charset[j]){
+				
+				s1[i] == 'X';
+
+			}
 
 		}
 
+
 	}
 
-	string r = "";
-	for(char c : s)if(c != '.')r+= c;
+	cout << s1 << endl;
 
-	cout << r << endl;
+	for(int i = 0; i<s1.size();++i){
+
+		if(s1[i] == '#')s1.erase(i,i);
+
+	}
+
+	cout << s1 << endl;	
+	
+
 
 }
