@@ -1,21 +1,23 @@
-#include <iostream>
-using namespace std;
 
 bool is_palindromic(int n){
 
-	for(int i = 0; i<dig(n); ++i){
+	int n2 = 0;
+	
+	int x = n;
 
-		
+
+	while(x>0){
+
+		n2 = 10*n2 + x%10;
+
+		x/=10;
 
 	}
 
+
+	return n2 == n;
+
+
 	
-
-}
-
-
-int main(){
-
-
 
 }
