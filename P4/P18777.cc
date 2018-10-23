@@ -1,48 +1,33 @@
 #include <iostream>
+ 
 using namespace std;
-
-
-string day_of_the_week (int d, int m, int y){
-
-	m-=2;
-
-	if(m<=0){
-
-		m+=12;
-		y--;
-
-	}
-
-	m = (m<0 ? -m : m); // remove
-
-	
-	
-	int c = y/100; 
-
-	int a = y%100;
-
-	int f = (2.6*m - 0.2) + d + a + a/4 + c/4 - 2*c; //might want to make double
-
-	int day = f%7;
-
-	day*= (day<0 ? -1 : 1);
-
-	if(day == 7)return "Saturday";
-	if(day == 1)return "Monday";
-	if(day == 2)return "Tuesday";
-	if(day == 3)return "Wednesday";
-	if(day == 4)return "Thursday";
-	if(day == 5)return "Firday";
-	return "Sunday";
-
+ 
+string dia_de_la_setmana(int d, int m, int a) {
+    m = m - 2;
+    if (m <= 0) {
+        m = m + 12;
+        --a;
+    }
+    int c = a/100;
+    int y = a%100;
+    int f = (2.6*m - 0.2);
+    f = f + d + y - 2*c;
+    y = y/4;
+    c = c/4;
+    f = f + c + y;
+    while (f < 0) f += 7;
+    f = f%7;
+    if (f == 0) return "Sunday";
+    if (f == 1) return "Monday";
+    if (f == 2) return "Tuesday";
+    if (f == 3) return "Wednesday";
+    if (f == 4) return "Thursday";
+    if (f == 5) return "Friday";
+    else return "Saturday";
 }
-
-int main(){
-
-	int a,b,c;
-
-	while(cin >> a >> b >> c)cout << day_of_the_week(a,b,c) << endl;
-		
-
+ 
+int main() {
+    int d,m,a;
+    cin >> d >> m >> a;
+    cout << dia_de_la_setmana(d,m,a) << endl;
 }
-//3 1 5046
