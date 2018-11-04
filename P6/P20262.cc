@@ -2,34 +2,35 @@
 using namespace std;
 
 
-
 int main(){
-
-    int n;
     
-
+    int n, x;
 
     while(cin >> n){
 
-        int x;
+        int max = 0, M = 0, MR = 0;
 
-        int sumL = 0;
+        for(int i = 0; i<n; ++i){
 
-        int sumR = 0;
+            cin >> x;
 
-        for(int i = 0; i< n; ++i){
-        
-            cin >> x;    
+            if(MR + x > 0)MR += x;
 
-
-
-            } 
+            else MR = 0;
             
+            M+= x;
+
+            if(M > max)max = M;
 
         } 
-        
+            
+        cout << max << " " << MR << endl;
 
     } 
 
 
+
 } 
+
+
+
