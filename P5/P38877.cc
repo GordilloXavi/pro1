@@ -1,28 +1,34 @@
 #include <iostream>
 using namespace std;
 
-void list(int n){
+void reverse(int n, int tot){
 
-	string s;
+    string s;
 
-	cin >> s;
+    if(cin >> s){
 
-	list(n-1);
 
-	if(n>0)cout << s << endl;
 
-	
+    } 
 
-}
+    else{
+
+        
+
+        
+
+
+    } 
+} 
+
 
 
 int main(){
 
-	int n;
+    int n;
 
-	cin >> n;
+    cin >> n;
 
-	list(n);
+    reverse(n, 0);
 
-
-}
+ 
