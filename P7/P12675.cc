@@ -4,54 +4,37 @@ using namespace std;
 
 int common_elements(const vector<int>& X, const vector<int>& Y){
 
-    int common = 0;
+    int c = 0;
 
-    for(int i = 0; i<X.size(); ++i){
+    int beg = 0;
 
-        int low = 0;
+    for(int i = 0; i< X.size(); ++i){
 
-        for(int j = low; j< Y.size() and X[i] <= Y[j]; ++j){
+        bool found = false;
+
+        for(int j = beg; j<Y.size() and not found; ++j){
 
             if(X[i] == Y[j]){
 
-                common++;
+                c++;
 
-                low = j+1;
-            }
+                beg = j+1;
+                found = true;
 
-            low = j;
+            } 
+            else if(X[i] < Y[j]){
 
-            
+                beg = j;
 
-        }
+                found = true;
 
-
-
-
-    }
-
-    return common;
+            } 
 
 
-}
-    
+        } 
 
-int main(){
+    } 
 
-    //vector<int> v1 = {3,5,7,8};
-    //vector<int> v2 = {2,3,7, 9, 10};
-
-
-    vector<int> v1 (4); 
-    vector<int> v2 (5);
-
-    for(int i =0; i<4; ++i)cin >> v1[i];
-
-    for(int i =0; i<5; ++i)cin >> v2[i];
-
-
-    cout << common_elements(v1,v2) << endl;
-
-
+    return c;
 
 }
