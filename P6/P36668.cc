@@ -1,19 +1,19 @@
-#include <iostream>
-#include <climits>
+#include<iostream>
 using namespace std;
 
 
-int main(){
+int main() {
 
-    int n;
+    int n,sum = 0;
 
-    cin >> n;
+   cin >> n;
 
-    int sum = (n*(n+1)*(2*n+1))/6;
+  for(int i = 1; i<=n; ++i){
 
+        sum += i*i;
 
-    cout << sum <<endl;
+  }  
 
-
-
+  cout << sum << endl;
+  
 } 

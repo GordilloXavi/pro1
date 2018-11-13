@@ -1,45 +1,53 @@
-#include <iostream>
+#include<iostream>
 using namespace std;
 
 void info_sequence(int& sum, int& last){
 
-   int l;
 
-    while(cin >> last and last != 0){
-        
-        l = last;    
-        sum+=last;
-    
-     } 
-    
-    last = l;
+    sum = 0;
+    int x;
 
-} 
+    while(cin >> x and x != 0){
 
-int main(){
-
-    int n = -1, sum = 0, last;
-    int sum1, last1;
-
-    info_sequence(sum,last);
-
-
-    int S = 1;
-
-    while(cin >> n and n != 0){
-
-        sum1 = n;
-
-        info_sequence(sum1,last1);
-
-        if(sum == sum1 and last == last1)S++;
-
+        sum += x;
+        last = x;
 
 
     } 
+
+
+
+} 
+
+
+int main() {
+
+    int sum, last, tot = 0, n;
+
+    info_sequence(sum,last);
+
+    printf("Sum = %d, last = %d\n", sum, last);
     
+    while(cin >> n and n!= 0){
 
-    if(n != -1)cout << S << endl;
+        int s = 0, l, x;
 
+        while(cin >> x and x != 0){
+
+            s += x;
+
+            l = x;
+        } 
+        
+
+        printf("S = %d, l = %d\n", s, l);
+
+        if(s == sum and l == last)tot++;
+
+
+    }     
+
+    cout << tot << endl;
+        
 
 } 

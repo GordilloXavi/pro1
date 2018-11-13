@@ -1,32 +1,28 @@
-#include <iostream>
+#include<iostream>
 using namespace std;
 
 
-
-int main(){
+int main() {
 
     int n;
 
     while(cin >> n){
 
         int x;
-        int count = 0;
-        int num = -1;
+        int count = 1;
+
+        bool found = 0;
         while(cin >> x and x != -1){
 
-            count++;
+                if(count == n){
+                    found = 1;
+                    cout << "At the position " << n << " there is a(n) " << x << ".\n";
+                } 
 
-            if(count == n)num = x;
+                count++;
 
+      }if(not found)cout << "Incorrect position.\n"; 
 
-        } 
+  }  
 
-        if(num == -1)cout << "Incorrect position.\n";
-
-        else printf("At the position %d there is a(n) %d.\n", n, num);
-
-
-    } 
-
-}
-
+} 
