@@ -16,12 +16,9 @@ bool contains(const string& s1, const string& s2){
 
             for(int j = 0; j<sz2; ++j){
                 if(s1[i+j] != s2[j]) e2 = 0;
-
-
             }
 
             if(e2)return 1;
-
 
         }
 
@@ -47,12 +44,9 @@ int main(){
 
             if(contains(V[i], V[j]))cout <<" " << V[j];
 
-
-
         }
 
       cout << endl;
-
 
     }
 
