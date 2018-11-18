@@ -12,32 +12,36 @@ double dist(double x,double y, double a,  double b){
 
 int main() {
 
-    
-    string s;
-
-    double x,y, fx,fy;
-
-
-    while(cin >> s >> fx >> fy){
-
-  double lx = fx, ly = fx;
-
-    double d = 0;
-
-    while(cin >> x >> y and (x != fx or y != fy)){
-
-
-        d+=double(dist(lx,ly,x,y));
-
-        lx = x;
-        ly = y;
-
-    } 
-
     cout.setf(ios::fixed);
-
     cout.precision(4);
 
-    cout << "Route " << s  << ": " << d << endl;
-    }
+
+   double lx,ly,a,b;
+
+  string city;
+
+     while(cin >> city >> lx >> ly){
+
+
+    double fx = lx, fy = ly;
+   
+
+    double d =0.0;
+
+    bool found = 0;
+
+     while( not found and cin >> a >> b ){
+        
+        d+= dist(lx,ly,a,b);
+
+        lx = a;
+        ly = b;
+
+        found = (a == fx and b == fy);
+     } 
+
+     cout << "Route " << city << ": " << d << endl;
+
+     }
+
 } 
