@@ -27,8 +27,7 @@ int main() {
 
         Matrix m(n, vector<char>(n, '.'));
 
-        int i = n-1, j = 0, x = n;
-        int c = 0;
+        int i = n-1, j = 0, x = n, c = 0;
 
 
         while(x >= 0){
@@ -37,13 +36,12 @@ int main() {
 
                 m[i][j] = 'X';
 
-                if(c == 0)++j;
-                if(c == 1)--i;
-                else if(c == 2)--j;
-                else if(c == 3 and i < n-1)++i;
-
-                if(j == n)j--;
-                if(i == n)i--;
+                j+= c == 0;
+                i-= c == 1;
+                j-= c == 2;
+                i+= c == 3 and i<n-1;
+                j-= j ==n;
+                i-= i == n;
 
             } 
 
