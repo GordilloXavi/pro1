@@ -18,7 +18,9 @@ int mcd(int a, int b){
 
 Rational rational(int n, int d){
 
-    Rational r = {0,1};
+    Rational r;
+    r.num = 0;
+    r.den = 1;
 
     if(n == 0)return r;
 
@@ -42,6 +44,8 @@ void print(Rational r){
 void operate(Rational& r, string& s, int n, int d){
 
     Rational result;
+    result.num = 0;
+    result.den = 1;
 
     if(s == "add"){
 
@@ -59,7 +63,7 @@ void operate(Rational& r, string& s, int n, int d){
 
         result.den = d*r.den;
         result.num = n*r.num;
-    } else{
+    } else if(s == "divide"){
 
 
         result. num = r.num*d;
