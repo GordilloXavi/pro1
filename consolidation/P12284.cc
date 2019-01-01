@@ -11,19 +11,8 @@ struct Word{
 
 int main(){
     int n,k;
-
     while(cin >> n >> k){
-       
-        vector<Word> v(n);
-        
-        for(int i = 0; i<n; ++i){
-            Word wo;
-            cin >> wo.w;
-            wo.reps = 1;
-            v.push_back(wo);     
-        }  
-
-
-
+        vector<string> words(n);
+         
     } 
 } 
