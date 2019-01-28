@@ -1,4 +1,5 @@
-# pro1
-Programes de pro1 i miscelània.
+# Programming 1
+
+Simple C++ programs for my introduction to programming course.
 
 
