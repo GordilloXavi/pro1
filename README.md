@@ -1,8 +1,5 @@
-# pro1
-Programes de pro1 i miscelània.
+# Programming 1
 
-TODO:
+Simple C++ programs for my introduction to programming course.
 
--Improve cheat program
--Make folders for each exercice list
 
